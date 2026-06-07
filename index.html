@@ -408,7 +408,17 @@
   .global-stat .lbl { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 0.7rem; }
 
   /* ============ CONTACT ============ */
-  #contact { background: var(--cream); }
+  /* Anchorage skyline background (falls back to navy if image absent) */
+  #contact { position: relative; background: var(--abyss); overflow: hidden; }
+  #contact::before { content: ""; position: absolute; inset: 0; z-index: 0;
+    background: var(--abyss) url('images/contact-anchorage.jpg') center 35% / cover no-repeat; }
+  #contact::after { content: ""; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(105deg, rgba(6,13,26,0.92) 0%, rgba(6,13,26,0.78) 45%, rgba(6,13,26,0.66) 100%); }
+  #contact .wrap { position: relative; z-index: 2; }
+  #contact .section-title, #contact .contact-info h3 { color: #fff; }
+  #contact .contact-info > p { color: rgba(255,255,255,0.72); }
+  #contact .contact-link { color: #fff; border-bottom-color: rgba(255,255,255,0.16); }
+  #contact .contact-link:hover { color: var(--gold-light); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2.5rem; }
   .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
   .contact-info > p { color: var(--slate); margin-bottom: 2rem; max-width: 440px; }

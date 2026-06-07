@@ -427,6 +427,16 @@
   .field textarea { resize: vertical; min-height: 110px; }
   .form-note { font-size: 0.78rem; color: var(--light-slate); margin-top: 1rem; text-align: center; }
 
+  /* ============ LIFE / PERSONAL GALLERY ============ */
+  #life { background: var(--cream-2); }
+  #life .filter { background: var(--paper); color: var(--slate); border-color: var(--line); }
+  #life .filter:hover { color: var(--ink); border-color: var(--gold); }
+  #life .filter.active { background: var(--gold-light); color: var(--abyss); border-color: var(--gold-light); }
+  #life .g-item { border-color: var(--line); }
+  .life-feature { position: relative; margin: 2.6rem 0 0.4rem; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 70px rgba(11,31,58,0.16); }
+  .life-feature img { width: 100%; max-height: 560px; object-fit: cover; object-position: center 28%; }
+  .life-feature figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem 1.7rem 1.2rem; color: #fff; font-size: 0.9rem; font-weight: 500; background: linear-gradient(to top, rgba(6,13,26,0.9), transparent); }
+
   /* ============ FOOTER ============ */
   footer { background: var(--abyss); color: rgba(255,255,255,0.6); padding: 3.5rem 0 2.5rem; }
   .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
@@ -448,6 +458,21 @@
   .lb-next { right: 3vw; top: 50%; transform: translateY(-50%); }
 
   /* ============ RESPONSIVE ============ */
+  /* collapse nav to a drawer early so links never overflow */
+  @media (max-width: 1024px) {
+    .nav-links {
+      position: fixed; inset: 66px 0 auto 0; flex-direction: column; gap: 0;
+      background: rgba(6,13,26,0.98); backdrop-filter: blur(16px);
+      padding: 1rem 1.5rem 2rem; transform: translateY(-120%); transition: transform 0.4s var(--ease);
+      border-bottom: 1px solid rgba(255,255,255,0.1); align-items: stretch;
+    }
+    body.menu-open .nav-links { transform: none; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.9rem; }
+    .nav-links a::after { display: none; }
+    .nav-cta { text-align: center; border-color: var(--gold-light) !important; margin-top: 0.6rem; }
+    .hamburger { display: flex; }
+  }
   @media (max-width: 1000px) {
     .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
     .hero-portrait { max-width: 360px; }
@@ -747,7 +772,7 @@
 </section>
 
 <!-- ── PORTFOLIO GALLERY ── -->
-<section id="gallery">
+<section id="gallery" data-gallery>
   <div class="wrap">
     <p class="eyebrow reveal">The Portfolio in Action</p>
     <h2 class="section-title reveal d1">Real assets. Real Alaska.</h2>
@@ -871,6 +896,48 @@
   </div>
 </section>
 
+<!-- ── LIFE / PERSONAL GALLERY ── -->
+<section id="life" data-gallery>
+  <div class="wrap">
+    <p class="eyebrow reveal">Beyond the Portfolio</p>
+    <h2 class="section-title reveal d1">Life, family, and service.</h2>
+    <p class="section-sub reveal d2">The person behind the enterprise. A husband, an Alaskan, and a citizen who shows up, from the Kenai to the Capitol.</p>
+    <figure class="life-feature reveal d2">
+      <img src="images/portrait-formal-alaska-2025.jpg" alt="Seth and Maiia Church in Alaska" loading="lazy" width="1700" height="1133">
+      <figcaption>Seth and Maiia Church. Alaska, 2025.</figcaption>
+    </figure>
+    <div class="filters reveal d2">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="alaska">Alaska</button>
+      <button class="filter" data-filter="civic">Civic &amp; Community</button>
+      <button class="filter" data-filter="world">Around the World</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item reveal" data-cat="alaska"><img src="images/alaska-fishing-2020.jpg" alt="Seth Church fishing an Alaska river" loading="lazy"><div class="g-cap">Seth Church fishing an Interior Alaska river. 2020.</div></div>
+      <div class="g-item reveal d1" data-cat="alaska"><img src="images/alaska-yurt-2024.jpg" alt="An Alaska yurt in the backcountry" loading="lazy"><div class="g-cap">Off the grid at an Alaska yurt. 2024.</div></div>
+      <div class="g-item reveal d2" data-cat="alaska"><img src="images/alaska-couple-steps-2024.jpg" alt="Seth and Maiia Church" loading="lazy"><div class="g-cap">Seth and Maiia Church. 2024.</div></div>
+      <div class="g-item reveal d3" data-cat="alaska"><img src="images/alaska-matsu-2024.jpg" alt="Seth and Maiia Church in the Mat-Su Valley" loading="lazy"><div class="g-cap">Seth and Maiia Church. Mat-Su Valley, Alaska, 2024.</div></div>
+      <div class="g-item reveal" data-cat="civic"><img src="images/civic-pat-pitney-2026.jpg" alt="Seth Church with University of Alaska President Pat Pitney" loading="lazy"><div class="g-cap">Seth Church with University of Alaska President Pat Pitney. 2026.</div></div>
+      <div class="g-item reveal d1" data-cat="civic"><img src="images/civic-dennis-prager-2024.jpg" alt="Seth and Maiia Church with Dennis Prager" loading="lazy"><div class="g-cap">Seth and Maiia Church with Dennis Prager, co-founder of PragerU. Fairbanks, 2024.</div></div>
+      <div class="g-item reveal d2" data-cat="civic"><img src="images/civic-us-capitol-2024.jpg" alt="Seth and Maiia Church at the United States Capitol" loading="lazy"><div class="g-cap">Seth and Maiia Church at the United States Capitol. Washington, D.C., 2024.</div></div>
+      <div class="g-item reveal d3" data-cat="civic"><img src="images/civic-polling-2026.jpg" alt="Seth Church at an Alaska polling place" loading="lazy"><div class="g-cap">Seth Church at the polls. Alaska, 2026.</div></div>
+      <div class="g-item reveal" data-cat="civic"><img src="images/civic-build-the-line-2026.jpg" alt="Build the Line, Alaska LNG gasline" loading="lazy"><div class="g-cap">Supporting the Alaska LNG gasline. 2026.</div></div>
+      <div class="g-item reveal d1" data-cat="civic"><img src="images/alaska-uaf-nanooks-2024.jpg" alt="UAF Nanooks hockey game" loading="lazy"><div class="g-cap">Cheering the UAF Nanooks. Fairbanks, 2024.</div></div>
+      <div class="g-item reveal d2" data-cat="world"><img src="images/world-kilauea-hawaii-2024.jpg" alt="Kilauea, Hawaii" loading="lazy"><div class="g-cap">At Kilauea. Hawaii, 2024.</div></div>
+      <div class="g-item reveal d3" data-cat="world"><img src="images/world-helicopter-hawaii-2024.jpg" alt="Helicopter tour in Hawaii" loading="lazy"><div class="g-cap">Blue Hawaiian helicopter tour. Hawaii, 2024.</div></div>
+      <div class="g-item reveal" data-cat="world"><img src="images/world-oahu-hawaii-2024.jpg" alt="Oahu, Hawaii" loading="lazy"><div class="g-cap">Oahu. Hawaii, 2024.</div></div>
+      <div class="g-item reveal d1" data-cat="world"><img src="images/world-charyn-canyon-2026.jpg" alt="Charyn Canyon, Kazakhstan" loading="lazy"><div class="g-cap">Charyn Canyon. Kazakhstan, 2026.</div></div>
+      <div class="g-item reveal d2" data-cat="world"><img src="images/world-charyn-overlook-2026.jpg" alt="Charyn Canyon overlook, Kazakhstan" loading="lazy"><div class="g-cap">Charyn Canyon. Kazakhstan, 2026.</div></div>
+      <div class="g-item reveal d3" data-cat="world"><img src="images/world-gondola-kazakhstan-2026.jpg" alt="Mountain gondola in Kazakhstan" loading="lazy"><div class="g-cap">Mountain gondola. Kazakhstan, 2026.</div></div>
+      <div class="g-item reveal" data-cat="world"><img src="images/world-seaside-2025.jpg" alt="Seaside at sunset" loading="lazy"><div class="g-cap">Seaside at sunset. 2025.</div></div>
+      <div class="g-item reveal d1" data-cat="world"><img src="images/world-puerto-rico-2023.jpg" alt="Puerto Rico" loading="lazy"><div class="g-cap">Puerto Rico. 2023.</div></div>
+      <div class="g-item reveal d2" data-cat="world"><img src="images/world-dinner-2026.jpg" alt="Seth and Maiia Church at dinner" loading="lazy"><div class="g-cap">Seth and Maiia Church. 2026.</div></div>
+      <div class="g-item reveal d3" data-cat="world"><img src="images/world-orlando-2023.jpg" alt="Orlando, Florida" loading="lazy"><div class="g-cap">Orlando, Florida. 2023.</div></div>
+      <div class="g-item reveal" data-cat="world"><img src="images/world-manhattan-2024.jpg" alt="Rooftop over Manhattan, New York City" loading="lazy"><div class="g-cap">Rooftop over Manhattan. New York City, 2024.</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ── GLOBAL ── -->
 <section id="global">
   <div class="wrap">
@@ -926,7 +993,7 @@
     <div class="footer-inner">
       <div class="footer-brand">Seth Church</div>
       <nav class="footer-links">
-        <a href="#impact">Impact</a><a href="#enterprise">Enterprise</a><a href="#gallery">Portfolio</a><a href="#record">Record</a><a href="#contact">Contact</a>
+        <a href="#impact">Impact</a><a href="#enterprise">Enterprise</a><a href="#gallery">Portfolio</a><a href="#record">Record</a><a href="#life">Life</a><a href="#contact">Contact</a>
       </nav>
     </div>
     <p class="footer-meta">&copy; <span id="year">2026</span> Seth Church &nbsp;·&nbsp; Fairbanks, Alaska &nbsp;·&nbsp; Building Alaska's future, one enterprise at a time.</p>
@@ -1007,43 +1074,45 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
 
-  // Gallery filter
-  const filterBtns = document.querySelectorAll('.filter');
-  const items = Array.from(document.querySelectorAll('.g-item'));
-  filterBtns.forEach(btn => btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    items.forEach(it => it.classList.toggle('hidden', f !== 'all' && it.dataset.cat !== f));
-  }));
-
-  // Lightbox
+  // Galleries: filter + lightbox, scoped per [data-gallery] section
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
   const lbCap = document.getElementById('lbCap');
   let visible = [], idx = 0;
-  const getVisible = () => items.filter(i => !i.classList.contains('hidden'));
-  function show(i) {
+  function lbShow(i) {
     const it = visible[i]; if (!it) return;
     lbImg.src = it.querySelector('img').src;
     lbImg.alt = it.querySelector('.g-cap').textContent;
     lbCap.textContent = it.querySelector('.g-cap').textContent;
     idx = i;
   }
-  items.forEach(it => it.addEventListener('click', () => {
-    visible = getVisible(); show(visible.indexOf(it));
-    lb.classList.add('open'); document.body.style.overflow = 'hidden';
-  }));
-  function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-  document.getElementById('lbClose').addEventListener('click', close);
-  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); visible = getVisible(); show((idx - 1 + visible.length) % visible.length); });
-  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); visible = getVisible(); show((idx + 1) % visible.length); });
-  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  function lbClose() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+
+  document.querySelectorAll('[data-gallery]').forEach(scope => {
+    const fbtns = Array.from(scope.querySelectorAll('.filter'));
+    const gitems = Array.from(scope.querySelectorAll('.g-item'));
+    fbtns.forEach(btn => btn.addEventListener('click', () => {
+      fbtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      gitems.forEach(it => it.classList.toggle('hidden', f !== 'all' && it.dataset.cat !== f));
+    }));
+    gitems.forEach(it => it.addEventListener('click', () => {
+      visible = gitems.filter(g => !g.classList.contains('hidden'));
+      lbShow(visible.indexOf(it));
+      lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    }));
+  });
+
+  document.getElementById('lbClose').addEventListener('click', lbClose);
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); if (visible.length) lbShow((idx - 1 + visible.length) % visible.length); });
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); if (visible.length) lbShow((idx + 1) % visible.length); });
+  lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
   document.addEventListener('keydown', e => {
     if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') close();
-    if (e.key === 'ArrowLeft') { visible = getVisible(); show((idx - 1 + visible.length) % visible.length); }
-    if (e.key === 'ArrowRight') { visible = getVisible(); show((idx + 1) % visible.length); }
+    if (e.key === 'Escape') lbClose();
+    if (e.key === 'ArrowLeft' && visible.length) lbShow((idx - 1 + visible.length) % visible.length);
+    if (e.key === 'ArrowRight' && visible.length) lbShow((idx + 1) % visible.length);
   });
 
   // Contact form → mailto compose (no backend; works on static hosting)

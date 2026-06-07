@@ -1,0 +1,7 @@
+# Original source photos (GPS-bearing). Web-optimized, EXIF-stripped copies live in /images/
+/*.HEIC
+/*.heic
+/*.JPG
+/*.jpg
+/*.jpeg
+/*.png

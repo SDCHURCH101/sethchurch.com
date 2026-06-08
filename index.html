@@ -384,6 +384,24 @@
   .rec h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
   .rec p { font-size: 0.88rem; color: var(--slate); line-height: 1.55; }
 
+  /* ============ MEDIA ============ */
+  #media { background: var(--cream-2); }
+  .media-feature { display: block; margin-top: 3rem; border-radius: 18px; text-decoration: none; background: linear-gradient(135deg, var(--navy), var(--abyss)); padding: 2.6rem 2.4rem; border: 1px solid rgba(255,255,255,0.06); transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+  .media-feature:hover { transform: translateY(-4px); box-shadow: 0 28px 60px rgba(11,31,58,0.28); }
+  .media-feature .media-tag { color: var(--gold-light); }
+  .media-feature h3 { font-family: 'Playfair Display', serif; font-style: italic; color: #fff; font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.4; margin: 0.7rem 0 0.9rem; max-width: 880px; }
+  .media-feature p { color: rgba(255,255,255,0.74); font-size: 0.96rem; line-height: 1.6; max-width: 740px; }
+  .media-feature .media-link { display: inline-block; margin-top: 1.2rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
+  .media-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 1.2rem; }
+  .media-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 1.6rem; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.3s; }
+  .media-card:hover { transform: translateY(-4px); box-shadow: 0 20px 46px rgba(11,31,58,0.1); border-color: var(--gold); }
+  .media-tag { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--teal-deep); }
+  .media-card h4 { font-family: 'Playfair Display', serif; font-size: 1.16rem; font-weight: 700; color: var(--ink); margin: 0.65rem 0 0.5rem; line-height: 1.3; }
+  .media-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.55; margin-bottom: auto; }
+  .media-meta { font-size: 0.78rem; color: var(--light-slate); font-weight: 600; margin-top: 1.1rem; }
+  @media (max-width: 900px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .media-grid { grid-template-columns: 1fr; } }
+
   /* ============ QUOTE BREAK ============ */
   .quote-break { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 5rem 0; }
   .quote-break img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -542,6 +560,7 @@
     <li><a href="#companies">Companies</a></li>
     <li><a href="#gallery">Portfolio</a></li>
     <li><a href="#record">Record</a></li>
+    <li><a href="#media">Media</a></li>
     <li><a href="#values">Values</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
@@ -886,6 +905,47 @@
           <h4>National Youth Chair</h4><p>Coalition for Juvenile Justice, 2007-2008, elected by national peers to lead youth justice advocacy</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEDIA ── -->
+<section id="media">
+  <div class="wrap">
+    <p class="eyebrow reveal">In the News</p>
+    <h2 class="section-title reveal d1">Media and press.</h2>
+    <p class="section-sub reveal d2">Interviews, commentary, and coverage on building in Alaska, energy policy, and the work behind the portfolio.</p>
+    <a class="media-feature reveal d2" href="https://thealaskastory.com/seth-church-alaska-cannot-tax-a-pipeline-that-never-gets-built/" target="_blank" rel="noopener">
+      <span class="media-tag">Op-Ed &middot; The Alaska Story &middot; 2026</span>
+      <h3>"You cannot collect property tax from a pipeline that never gets built."</h3>
+      <p>Seth Church on why Alaska's tax structure has to make the Alaska LNG line buildable before the state can count on a dollar of revenue from it, and what that means for solving the Interior's energy crisis.</p>
+      <span class="media-link">Read the op-ed ↗</span>
+    </a>
+    <div class="media-grid">
+      <a class="media-card reveal" href="https://jewelisaac.com/media/interview-on-kfar-part-one" target="_blank" rel="noopener">
+        <span class="media-tag">Radio &middot; KFAR</span>
+        <h4>Building Alaska, Part 1</h4>
+        <p>Seth joins KFAR's Building Alaska series to talk construction, real estate, and growing a business in the Interior.</p>
+        <span class="media-meta">October 2024 &middot; Listen ↗</span>
+      </a>
+      <a class="media-card reveal d1" href="https://jewelisaac.com/media/interview-on-kfar-part-two" target="_blank" rel="noopener">
+        <span class="media-tag">Radio &middot; KFAR</span>
+        <h4>Building Alaska, Part 2</h4>
+        <p>The conversation continues on what it takes to deliver projects across Alaska.</p>
+        <span class="media-meta">October 2024 &middot; Listen ↗</span>
+      </a>
+      <a class="media-card reveal d2" href="https://jewelisaac.com/media/interview-on-kfar-part-three" target="_blank" rel="noopener">
+        <span class="media-tag">Radio &middot; KFAR</span>
+        <h4>Building Alaska, Part 3</h4>
+        <p>The final part of the KFAR series on building and operating across the Interior.</p>
+        <span class="media-meta">October 2024 &middot; Listen ↗</span>
+      </a>
+      <a class="media-card reveal d3" href="https://jewelisaac.com/media/alaska-motor-inn-demolition-a-major-win" target="_blank" rel="noopener">
+        <span class="media-tag">News</span>
+        <h4>Alaska Motor Inn demolition, a major win</h4>
+        <p>Coverage of a downtown Fairbanks demolition milestone and what it opens up for the site.</p>
+        <span class="media-meta">October 2024 &middot; Read ↗</span>
+      </a>
     </div>
   </div>
 </section>

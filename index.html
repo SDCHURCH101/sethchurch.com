@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Seth Church, Alaska entrepreneur and civic leader. Founder of a 15-company enterprise spanning construction, real estate, and North Slope infrastructure, and a four-time gubernatorial appointee serving on the University of Alaska Board of Regents.">
+<meta name="description" content="Seth Church is a Fairbanks builder, contractor, and property owner. With his wife Maiia he owns 15 Alaska companies across construction, real estate, housing, North Slope infrastructure, and essential services, investing in Fairbanks and creating local jobs.">
 <meta name="theme-color" content="#060d1a">
 <meta name="author" content="Seth Church">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Seth Church, Alaska Entrepreneur & Civic Leader">
-<meta property="og:description" content="Building Alaska's future through enterprise, community, and principled leadership.">
+<meta property="og:description" content="I build, buy, fix, and operate real things in Alaska: companies, buildings, housing, jobs, and services. Rooted in Fairbanks, invested in Alaska's future.">
 <meta property="og:url" content="https://sethchurch.com/">
 <meta name="twitter:card" content="summary_large_image">
 <title>Seth Church | Alaska Entrepreneur & Civic Leader</title>
@@ -544,6 +544,79 @@
     *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
     .reveal { opacity: 1 !important; transform: none !important; }
   }
+
+  /* ============ 2026 WARM REVISION ============ */
+  #why, #alaska, #audiences, #stories, #accountability { scroll-margin-top: 70px; }
+
+  /* Why I built this site */
+  #why { background: var(--cream-2); }
+  .why-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: center; }
+  .why-body p { color: var(--slate); font-size: 1.05rem; margin-bottom: 1.1rem; }
+  .why-body p.lead { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem,2.2vw,1.5rem); color: var(--ink); line-height: 1.5; margin: 0.4rem 0 1.4rem; }
+  .why-sign { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.4rem; color: var(--ink); margin-top: 1.2rem; }
+  .why-photo { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 28px 64px rgba(11,31,58,0.16); }
+  .why-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+
+  /* Audience quick-nav */
+  .aud-nav { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2.6rem; }
+  .aud-nav a { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--paper); border: 1px solid var(--line); border-radius: 100px; padding: 0.7rem 1.2rem; font-size: 0.86rem; font-weight: 600; color: var(--ink); text-decoration: none; transition: all 0.25s var(--ease); }
+  .aud-nav a:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* What this means for Alaska */
+  #alaska { background: var(--cream); }
+  .alaska-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; align-items: center; }
+  .alaska-photo { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 28px 64px rgba(11,31,58,0.16); }
+  .alaska-photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .alaska-body p { color: var(--slate); font-size: 1.05rem; margin-bottom: 1.1rem; }
+  .benefit-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.7rem; }
+  .benefit-chips span { font-size: 0.8rem; font-weight: 600; color: var(--teal-deep); background: rgba(61,214,176,0.10); border: 1px solid rgba(61,214,176,0.25); border-radius: 100px; padding: 0.4rem 0.9rem; }
+
+  /* Audience cards */
+  #audiences { background: var(--cream-2); }
+  .aud-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+  .aud-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.3s; scroll-margin-top: 90px; }
+  .aud-card:hover { transform: translateY(-4px); box-shadow: 0 22px 54px rgba(11,31,58,0.12); border-color: var(--gold); }
+  .aud-card .aud-tag { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--gold); }
+  .aud-card h3 { font-family: 'Playfair Display', serif; font-size: 1.28rem; font-weight: 700; color: var(--ink); margin: 0.5rem 0 0.7rem; line-height: 1.25; }
+  .aud-card p { color: var(--slate); font-size: 0.93rem; line-height: 1.62; margin-bottom: 1.3rem; }
+  .aud-card .aud-cta { margin-top: auto; font-size: 0.84rem; font-weight: 600; color: var(--teal-deep); text-decoration: none; }
+  .aud-card .aud-cta:hover { color: var(--gold); }
+
+  /* Proof stories */
+  #stories { background: var(--cream); }
+  .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+  .story { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 2rem; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.3s; }
+  .story:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(11,31,58,0.1); border-color: var(--gold); }
+  .story .story-yr { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--gold); }
+  .story h3 { font-family: 'Playfair Display', serif; font-size: 1.24rem; font-weight: 700; color: var(--ink); margin: 0.5rem 0 0.6rem; line-height: 1.28; }
+  .story p { color: var(--slate); font-size: 0.93rem; line-height: 1.62; }
+
+  /* Fairbanks values band */
+  .fbk { background: linear-gradient(150deg, var(--navy), var(--abyss)); color: #fff; }
+  .fbk .wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; align-items: center; }
+  .fbk .eyebrow { color: var(--gold-light); }
+  .fbk h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(1.8rem,3.8vw,2.9rem); line-height: 1.1; color: #fff; margin-top: 1rem; }
+  .fbk p { color: rgba(255,255,255,0.8); font-size: 1.06rem; margin-bottom: 1.1rem; }
+
+  /* Accountability note */
+  #accountability { background: var(--cream-2); }
+  .note-band { max-width: 800px; margin: 0 auto; text-align: center; }
+  .note-band p { color: var(--slate); font-size: 1.06rem; line-height: 1.7; margin-bottom: 1rem; }
+  .note-band .note-lead { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem,2.4vw,1.5rem); color: var(--ink); }
+
+  /* Contact inquiry buttons */
+  .inq-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 0.4rem 0 1.8rem; }
+  .inq-row a { font-size: 0.8rem; font-weight: 600; color: #fff; border: 1px solid var(--glass-line); background: var(--glass); border-radius: 100px; padding: 0.55rem 1rem; text-decoration: none; transition: all 0.25s var(--ease); }
+  .inq-row a:hover { background: var(--gold-light); color: var(--abyss); border-color: var(--gold-light); }
+
+  @media (max-width: 1000px) {
+    .why-grid, .alaska-grid, .fbk .wrap { grid-template-columns: 1fr; gap: 2.2rem; }
+    .alaska-photo { order: -1; }
+    .aud-grid, .story-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 720px) {
+    .aud-grid, .story-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -554,14 +627,14 @@
 <nav id="nav">
   <a class="nav-brand" href="#home"><span class="dot"></span>Seth Church</a>
   <ul class="nav-links" id="navLinks">
+    <li><a href="#why">Why</a></li>
+    <li><a href="#about">My Story</a></li>
     <li><a href="#impact">Impact</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#enterprise">Enterprise</a></li>
     <li><a href="#companies">Companies</a></li>
+    <li><a href="#audiences">Work With Me</a></li>
     <li><a href="#gallery">Portfolio</a></li>
-    <li><a href="#record">Record</a></li>
+    <li><a href="#record">Service</a></li>
     <li><a href="#media">Media</a></li>
-    <li><a href="#values">Values</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -576,21 +649,21 @@
   </div>
   <div class="wrap hero-inner">
     <div>
-      <p class="eyebrow hero-eyebrow reveal">Alaska Entrepreneur &amp; Civic Leader</p>
+      <p class="eyebrow hero-eyebrow reveal">Fairbanks, Alaska</p>
       <h1 class="hero-name reveal d1">Seth<em>Church</em></h1>
       <p class="hero-title reveal d2">Builder. Steward. Servant Leader.</p>
       <p class="hero-desc reveal d3">
-        Across two decades, Seth Church has turned vision into enterprise, creating jobs, building communities, and serving Alaska with conviction. From Fairbanks to Prudhoe Bay, he builds things that last.
+        I'm Seth Church, a Fairbanks businessman, contractor, property owner, and husband. I build, buy, fix, and operate real things in Alaska: companies, buildings, housing, and the everyday services people count on. I do it because I believe Fairbanks and our state are worth investing in.
       </p>
       <div class="hero-cta reveal d4">
-        <a href="#enterprise" class="btn btn-primary">Explore the Portfolio <span class="arrow">→</span></a>
-        <a href="#record" class="btn btn-ghost">The Civic Record</a>
+        <a href="#audiences" class="btn btn-primary">Work With Me <span class="arrow">→</span></a>
+        <a href="#why" class="btn btn-ghost">Why I Built This Site</a>
       </div>
       <div class="hero-stats reveal d4">
-        <div class="hero-stat"><span class="num" data-count="15">15</span><span class="lbl">Companies Owned</span></div>
+        <div class="hero-stat"><span class="num" data-count="15">15</span><span class="lbl">Alaska Companies</span></div>
         <div class="hero-stat"><span class="num" data-count="25" data-suffix="+">25+</span><span class="lbl">Years Building</span></div>
-        <div class="hero-stat"><span class="num" data-count="200" data-suffix="+">200+</span><span class="lbl">Apartment Units</span></div>
-        <div class="hero-stat"><span class="num" data-count="4">4</span><span class="lbl">Governors Appointed By</span></div>
+        <div class="hero-stat"><span class="num" data-count="200" data-suffix="+">200+</span><span class="lbl">Homes for Residents</span></div>
+        <div class="hero-stat"><span class="num" data-count="4">4</span><span class="lbl">Governors Served</span></div>
       </div>
     </div>
     <div class="hero-portrait reveal d2">
@@ -620,30 +693,80 @@
   </div>
 </div>
 
+<!-- ── WHY I BUILT THIS SITE ── -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-body">
+        <p class="eyebrow reveal">Why I Built This Site</p>
+        <h2 class="section-title reveal d1">Straight answers, from me to you.</h2>
+        <p class="lead reveal d2">I built this site so people can see who I am, what I do, what I believe, and how to reach me.</p>
+        <p class="reveal d2">In a town like Fairbanks, your reputation is everything. People should not have to guess where I stand or what I am working on. I have been blessed to build companies, buy and improve properties, employ Alaskans, and serve in public roles. I also know that with growth comes responsibility.</p>
+        <p class="reveal d3">This is my honest attempt to be open about the work I am doing, the values that guide me, and the kind of future I want to help build for Fairbanks and Alaska.</p>
+        <p class="why-sign reveal d3">Seth Church</p>
+      </div>
+      <div class="why-photo reveal d2">
+        <img src="images/seth-maiia-snowmachine.jpg" alt="Seth and Maiia Church out in Alaska" loading="lazy">
+      </div>
+    </div>
+    <div class="aud-nav reveal d3">
+      <a href="#aud-clients">For Clients</a>
+      <a href="#aud-investors">For Investors</a>
+      <a href="#aud-vendors">For Vendors</a>
+      <a href="#aud-community">For Community</a>
+      <a href="#aud-media">For Media &amp; Public Service</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── IMPACT / BENTO STATS ── -->
 <section id="impact">
   <div class="wrap">
     <p class="eyebrow reveal">By the Numbers</p>
-    <h2 class="section-title reveal d1">An enterprise measured in real assets.</h2>
-    <p class="section-sub reveal d2">One of Interior Alaska's most diversified privately-held portfolios, anchored in construction, real estate, and essential infrastructure, and built to last generations.</p>
+    <h2 class="section-title reveal d1">Numbers that add up to responsibility.</h2>
+    <p class="section-sub reveal d2">I keep these here because they show what is really at stake: jobs for Alaskans, homes for families, and buildings worth taking care of. To me they read as responsibility more than scale.</p>
     <div class="bento">
       <div class="tile feature reveal">
         <span class="tag">The Portfolio</span>
         <div>
           <div class="stat-num"><span data-count="15">15</span></div>
-          <p class="stat-lbl">Companies owned with his wife, Maiia, spanning construction, energy infrastructure, and real estate.</p>
+          <p class="stat-lbl">Alaska companies my wife Maiia and I own and operate, employing Alaskans across construction, energy, housing, and essential services.</p>
         </div>
       </div>
-      <div class="tile reveal d1"><div class="stat-num"><span data-count="200">200</span><span class="suf">+</span></div><p class="stat-lbl">Apartment units in Fairbanks</p></div>
+      <div class="tile reveal d1"><div class="stat-num"><span data-count="200">200</span><span class="suf">+</span></div><p class="stat-lbl">Homes for Fairbanks residents and families</p></div>
       <div class="tile reveal d2"><div class="stat-num"><span data-count="177">177</span></div><p class="stat-lbl">Apartments at the Northward Building</p></div>
-      <div class="tile accent reveal d1"><div class="stat-num">8-<span class="suf">Fig</span></div><p class="stat-lbl">Annual construction revenue</p></div>
+      <div class="tile accent reveal d1"><div class="stat-num">8-<span class="suf">Fig</span></div><p class="stat-lbl">Annual construction revenue, most of it paid to Alaska crews and vendors</p></div>
       <div class="tile reveal d2"><div class="stat-num"><span data-count="208">208</span></div><p class="stat-lbl">Bed Prudhoe Bay man-camp</p></div>
-      <div class="tile accent span2 reveal d1"><div class="stat-num"><span data-count="400000">400,000</span><span class="suf">+ sq ft</span></div><p class="stat-lbl">Commercial real estate owned across Alaska, from Fairbanks and North Pole warehouses to North Slope shops</p></div>
-      <div class="tile reveal d2"><div class="stat-num"><span class="pre">#</span><span data-count="1">1</span></div><p class="stat-lbl">Fairbanks' tallest building</p></div>
-      <div class="tile reveal d3"><div class="stat-num"><span class="pre">$</span><span data-count="3">3</span><span class="suf">M</span></div><p class="stat-lbl">Raised in 8 months for a U.S. Senate campaign</p></div>
+      <div class="tile accent span2 reveal d1"><div class="stat-num"><span data-count="400000">400,000</span><span class="suf">+ sq ft</span></div><p class="stat-lbl">Commercial, industrial, and residential space being maintained, improved, and put back to productive use across Alaska</p></div>
+      <div class="tile reveal d2"><div class="stat-num"><span data-count="90">90</span></div><p class="stat-lbl">Income-restricted workforce apartments at the Northward, about half the building</p></div>
+      <div class="tile accent reveal d3"><div class="stat-num"><span data-count="100">100</span><span class="suf">%</span></div><p class="stat-lbl">Alaska-based and operated, every company headquartered and hiring here</p></div>
       <div class="tile reveal d1"><div class="stat-num"><span data-count="4">4</span></div><p class="stat-lbl">Gubernatorial appointments</p></div>
       <div class="tile reveal d2"><div class="stat-num"><span data-count="56">56</span></div><p class="stat-lbl">Countries visited, 5 continents</p></div>
       <div class="tile reveal d3"><div class="stat-num"><span data-count="25">25</span><span class="suf">+</span></div><p class="stat-lbl">Years building Alaska</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT THIS MEANS FOR ALASKA ── -->
+<section id="alaska">
+  <div class="wrap alaska-grid">
+    <div class="alaska-photo reveal">
+      <img src="images/hydrovac-crew.jpg" alt="A Hydrovac Pro crew at work in Fairbanks" loading="lazy">
+    </div>
+    <div class="alaska-body">
+      <p class="eyebrow reveal">Built Here. Reinvested Here.</p>
+      <h2 class="section-title reveal d1">What this means for Alaska.</h2>
+      <p class="reveal d2">To me, these companies and buildings are not just numbers on a page. They are jobs for Alaskans, payroll for local families, work for subcontractors and vendors, apartments for residents, commercial space for employers, and old buildings brought back to life.</p>
+      <p class="reveal d2">I believe Alaska needs more people willing to invest here, take the risk here, hire here, and stay here. My goal is simple: keep building businesses and properties that make Fairbanks stronger, not just for today, but for the next generation.</p>
+      <div class="benefit-chips reveal d3">
+        <span>Local jobs</span>
+        <span>Alaska payroll</span>
+        <span>Local vendors &amp; subs</span>
+        <span>Housing for residents</span>
+        <span>Old buildings restored</span>
+        <span>Taxes paid locally</span>
+        <span>Wealth kept in Alaska</span>
+      </div>
     </div>
   </div>
 </section>
@@ -652,18 +775,18 @@
 <section id="about">
   <div class="wrap about-grid">
     <div>
-      <p class="eyebrow reveal">The Story</p>
-      <h2 class="section-title reveal d1">From the first nail to a statewide enterprise.</h2>
+      <p class="eyebrow reveal">My Story</p>
+      <h2 class="section-title reveal d1">From the first nail to fifteen companies.</h2>
       <div class="about-body reveal d2">
-        <p>Seth Church built his first house at age 17. It wasn't a hobby. It was the beginning of a life defined by disciplined entrepreneurship, relentless execution, and deep roots in Alaska's communities.</p>
-        <p>In his early twenties, Seth was already buying and selling land, houses, warehouses, and apartment buildings. By 25, he held stakes in multiple real estate ventures, two construction firms, and a growing portfolio of commercial assets.</p>
-        <p>When shale technology opened North Dakota's Bakken Basin, Seth started companies on the oilfields and built them up from modular water tanks into heavy civil, crane, roustabout, and oilfield services. Then oil prices fell sharply, and the market turned hard against operators across the basin. Seth came back to Alaska and started over, building new companies and growing them through the downturn. Those hard years taught him to stay diligent, learn from every setback, and keep building until the work paid off.</p>
-        <p>Today, Seth and his wife Maiia own 15 companies spanning construction, Prudhoe Bay oil and gas infrastructure, real estate, office buildings, warehouses, airport terminals, and essential community services.</p>
+        <p>I built my first house when I was 17. It was not a hobby. It was the start of a life spent building: learning a trade, taking on risk, and putting down roots in Alaska's communities.</p>
+        <p>In my early twenties I was already buying and selling land, houses, warehouses, and apartment buildings. By 25 I held stakes in several real estate ventures, two construction firms, and a growing set of commercial assets. I learned early that you earn trust by doing what you said you would do.</p>
+        <p>When shale opened up North Dakota's Bakken, I started companies on the oilfields and grew them from modular water tanks into heavy civil, crane, roustabout, and oilfield services. Then oil prices fell hard and the market turned against operators across the basin. I came home to Alaska and started over. I built new companies and grew them right through the downturn. Those lean years taught me more than any good year ever did: stay diligent, learn from every setback, and keep building until the work pays off.</p>
+        <p>Today my wife Maiia and I own 15 companies spanning construction, Prudhoe Bay oil and gas infrastructure, real estate, office buildings, warehouses, airport terminals, and the everyday services that keep Fairbanks running. These are not abstract assets to me. They are buildings, jobs, families, tenants, vendors, and communities.</p>
         <div class="pull-quote">
           <p>"My philosophy is to surround myself with specialists who are diligent in their work and have strong moral values."</p>
           <cite>Seth Church</cite>
         </div>
-        <p>Seth's ambition has always been matched by purpose. "When I am 80, I want to look back on my life and say I helped a lot of people. I made a difference."</p>
+        <p>My ambition has always been matched by purpose. When I am 80, I want to look back on my life and say I helped a lot of people, and that I made a difference.</p>
       </div>
     </div>
     <aside class="about-aside reveal d2">
@@ -810,6 +933,53 @@
   </div>
 </section>
 
+<!-- ── AUDIENCES / WORK WITH ME ── -->
+<section id="audiences">
+  <div class="wrap">
+    <p class="eyebrow reveal">Work With Me</p>
+    <h2 class="section-title reveal d1">However you found this site, there is a place for you.</h2>
+    <p class="section-sub reveal d2">Clients, investors, vendors, neighbors, and the press all reach out for different reasons. Here is the fastest way to find the right door.</p>
+    <div class="aud-grid">
+      <div class="aud-card reveal" id="aud-clients">
+        <span class="aud-tag">For Clients</span>
+        <h3>Need the work done right</h3>
+        <p>If you need construction, property management, hydrovac, septic, staffing, or handyman help, my companies are built around reliability and long-term relationships. We work in real Alaska conditions, with real deadlines and real budgets. I want you to find the right company and the right contact fast.</p>
+        <a class="aud-cta" href="#companies">See the companies &darr;</a>
+      </div>
+      <div class="aud-card reveal d1" id="aud-investors">
+        <span class="aud-tag">For Investors</span>
+        <h3>Long-term partners</h3>
+        <p>I look for long-term partnerships with people who understand Alaska, hard assets, operating businesses, housing, logistics, and infrastructure. My focus is not speculation. It is buying, building, improving, operating, and holding things that serve real needs here.</p>
+        <a class="aud-cta" href="mailto:seth@sethchurch.com?subject=Investor%20inquiry">Request portfolio information &nearr;</a>
+      </div>
+      <div class="aud-card reveal d2" id="aud-vendors">
+        <span class="aud-tag">For Vendors</span>
+        <h3>Subcontractors &amp; suppliers</h3>
+        <p>Vendors and subcontractors are a big part of how my companies operate. If you provide construction services, materials, equipment, logistics, maintenance, or professional services in Alaska, I want it to be easy to connect with the right person.</p>
+        <a class="aud-cta" href="mailto:office@sethchurch.com?subject=Vendor%20or%20subcontractor%20inquiry">Vendor contact &nearr;</a>
+      </div>
+      <div class="aud-card reveal" id="aud-community">
+        <span class="aud-tag">For Community</span>
+        <h3>Neighbors &amp; fair questions</h3>
+        <p>I know growth brings questions. I welcome honest conversations about what I am building, why I am investing, and how these projects affect Fairbanks. Business owners have a responsibility to be accessible, transparent, and accountable to the place they call home.</p>
+        <a class="aud-cta" href="#accountability">How I think about it &darr;</a>
+      </div>
+      <div class="aud-card reveal d1" id="aud-media">
+        <span class="aud-tag">For Media &amp; Public Service</span>
+        <h3>Press &amp; policy</h3>
+        <p>My public service and policy work come from the same place as my business work: I want Alaska to be a place where families can afford to live, businesses can grow, and young people can see a future. For an interview or comment, reach out anytime.</p>
+        <a class="aud-cta" href="mailto:seth@sethchurch.com?subject=Media%20or%20public%20service%20inquiry">Media inquiry &nearr;</a>
+      </div>
+      <div class="aud-card reveal d2">
+        <span class="aud-tag">Not Sure?</span>
+        <h3>Just reach out</h3>
+        <p>If you are not sure where you fit, that is fine. Send a note and I will point you to the right company or the right person. I would rather you ask than guess.</p>
+        <a class="aud-cta" href="#contact">Contact Seth &darr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── PORTFOLIO GALLERY ── -->
 <section id="gallery" data-gallery>
   <div class="wrap">
@@ -845,12 +1015,29 @@
   </div>
 </section>
 
+<!-- ── PROOF / STORIES ── -->
+<section id="stories">
+  <div class="wrap">
+    <p class="eyebrow reveal">A Few Stories</p>
+    <h2 class="section-title reveal d1">Proof, not just numbers.</h2>
+    <p class="section-sub reveal d2">Numbers tell you how big something got. Stories tell you how it was earned. Here are a few.</p>
+    <div class="story-grid">
+      <div class="story reveal"><span class="story-yr">At 17</span><h3>I built my first house</h3><p>Most kids my age were not pulling permits. I was learning to frame walls and finish a job. That house taught me that you get paid for what you finish, not what you start, and I have built that way ever since.</p></div>
+      <div class="story reveal d1"><span class="story-yr">The Bakken</span><h3>I rebuilt after the downturn</h3><p>I grew real companies on the North Dakota oilfields. Then prices crashed and the market turned hard. I came home to Alaska and started over, kept my word to the people counting on me, and built back steadier. That season taught me more than any good year ever did.</p></div>
+      <div class="story reveal d2"><span class="story-yr">Downtown Fairbanks</span><h3>I bet on Main Street</h3><p>Plenty of people were giving up on downtown. I invested in it instead, including the Northward Building, where about half the apartments are workforce housing for Fairbanks families. When you fix a building, you fix a piece of a town.</p></div>
+      <div class="story reveal"><span class="story-yr">Hard Assets</span><h3>I take on the tough buildings</h3><p>Some of what I buy is worn out, complicated, or written off by other people. I would rather restore a difficult property and put it back to work than let it sit empty. An old building brought back to life is good for everyone around it.</p></div>
+      <div class="story reveal d1"><span class="story-yr">Every Season</span><h3>I built the unglamorous, essential stuff</h3><p>Septic, hydrovac, staffing, handyman work, laundry. None of it is flashy, but it is the work that keeps a northern town running at 40 below. I am proud to own companies that show up when people actually need them.</p></div>
+      <div class="story reveal d2"><span class="story-yr">Alaska's Future</span><h3>I support the gas line</h3><p>I back Alaska LNG because the Interior needs affordable energy, steady jobs, and a reason for the next generation to stay. You cannot tax a pipeline that never gets built. I would rather help get it built.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ── RECORD / TIMELINE + RECOGNITION ── -->
 <section id="record">
   <div class="wrap">
     <p class="eyebrow reveal">Public Service</p>
-    <h2 class="section-title reveal d1">A record of appointment, trust, and results.</h2>
-    <p class="section-sub reveal d2">Seth Church's civic career spans four governors, two decades, and every level of Alaska public life, from Senate internships to board leadership.</p>
+    <h2 class="section-title reveal d1">Why I serve, and where I have shown up.</h2>
+    <p class="section-sub reveal d2">I have been honored to serve in public roles because I believe people who build, hire, manage budgets, and solve practical problems should be willing to serve their communities too. My focus has always been the practical stuff: education, energy, housing, jobs, and Alaska's future.</p>
     <div class="timeline">
       <div class="tl-item current reveal">
         <div class="tl-meta"><span class="tl-badge">Current</span><span class="tl-year">Appointed by Gov. Dunleavy</span></div>
@@ -861,16 +1048,6 @@
         <div class="tl-meta"><span class="tl-badge">Current</span><span class="tl-year">Since 2021</span></div>
         <h3>Alaska Policy Forum, Board of Directors</h3>
         <p>Advancing free-market solutions and limited-government policy for Alaskans through research, advocacy, and civic engagement.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-meta"><span class="tl-badge">Party Leadership</span><span class="tl-year">2020-2021</span></div>
-        <h3>Finance Chairman, Alaska Republican Party</h3>
-        <p>Appointed by Chairman Clary to lead the party's financial operations during a critical election cycle.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-meta"><span class="tl-badge">Campaign Leadership</span><span class="tl-year">2010</span></div>
-        <h3>Fundraising Chairman, Joe Miller U.S. Senate</h3>
-        <p>Raised over $3 million in an eight-month campaign cycle, reflecting Seth's network depth and organizational discipline.</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-meta"><span class="tl-badge gov">Gubernatorial Appointment</span><span class="tl-year">2009, re-appointed by Gov. Parnell</span></div>
@@ -891,6 +1068,16 @@
         <div class="tl-meta"><span class="tl-badge">State Legislature</span><span class="tl-year">Jan to May 2003</span></div>
         <h3>Alaska State Senate Page</h3>
         <p>Served in the Alaska State Senate, developing firsthand understanding of Alaska's legislative process and the machinery of state government.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-meta"><span class="tl-badge">Organizational Leadership</span><span class="tl-year">2020-2021</span></div>
+        <h3>Finance Chairman, Alaska Republican Party</h3>
+        <p>Asked to run the financial operations of a statewide organization through a demanding budget and election cycle. The job was logistics, accountability, and follow-through.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-meta"><span class="tl-badge">Campaign Leadership</span><span class="tl-year">2010</span></div>
+        <h3>Fundraising Chairman, U.S. Senate Campaign</h3>
+        <p>Led fundraising for a 2010 U.S. Senate campaign, raising over $3 million in eight months. It was a test of organization, relationships, and getting results on a deadline.</p>
       </div>
     </div>
 
@@ -965,6 +1152,20 @@
   </blockquote>
 </div>
 
+<!-- ── FAIRBANKS VALUES ── -->
+<section class="fbk">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow reveal">Fairbanks Values</p>
+      <h2 class="reveal d1">Talk is cheap up here.</h2>
+    </div>
+    <div>
+      <p class="reveal d2">Fairbanks does not reward talk for very long. People here respect work, follow-through, grit, and whether you do what you said you were going to do.</p>
+      <p class="reveal d3">Those values shaped me. They shape how I build companies, how I take care of property, how I treat the people I work with, and how I think about Alaska's future.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── VALUES ── -->
 <section id="values">
   <div class="wrap">
@@ -978,6 +1179,18 @@
       <div class="value reveal"><span class="vnum">04</span><h3>People Over Process</h3><p>"A company is only as good as its people." Seth surrounds himself with specialists of strong character and diligent work ethic, and empowers them to perform at their best.</p></div>
       <div class="value reveal d1"><span class="vnum">05</span><h3>Service Above Self</h3><p>Seven years on juvenile justice. Two board reappointments. Multiple campaign leadership roles. Seth gives his time, expertise, and resources to causes that matter to Alaska.</p></div>
       <div class="value reveal d2"><span class="vnum">06</span><h3>Long-Term Vision</h3><p>Seth's 200+ apartment units, North Slope industrial assets, and commercial real estate aren't trades. They are generational investments in the places and people he believes in.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ACCOUNTABILITY / TRANSPARENCY ── -->
+<section id="accountability">
+  <div class="wrap">
+    <div class="note-band">
+      <p class="eyebrow center reveal">Accountability</p>
+      <h2 class="section-title reveal d1" style="margin-bottom:1.4rem;">Owning things here means owing people answers.</h2>
+      <p class="note-lead reveal d2">When someone owns businesses and property in a community, people will have fair questions. I do not expect everyone to agree with me, but I do believe people deserve straight answers.</p>
+      <p class="reveal d3">My goal is to stay accessible, be honest about what I am building, and be accountable to the community where I live and work.</p>
     </div>
   </div>
 </section>
@@ -1050,11 +1263,21 @@
     <h2 class="section-title reveal d1">Let's connect.</h2>
     <div class="contact-grid">
       <div class="contact-info reveal d1">
-        <h3>For partners, press &amp; community</h3>
-        <p>Whether you're exploring a business opportunity, seeking a keynote or advisory perspective, or simply want to understand what makes Alaska's economy work, Seth welcomes the conversation.</p>
-        <a href="mailto:seth.church5@gmail.com" class="contact-link">
+        <h3>Contact Seth</h3>
+        <p>Whether you want to hire one of my companies, talk about a partnership, ask a question as a neighbor, or set up an interview, I welcome the conversation. Pick the line that fits, or just send a note.</p>
+        <div class="inq-row reveal d2">
+          <a href="mailto:seth@sethchurch.com?subject=Working%20with%20one%20of%20your%20companies">Work with a company</a>
+          <a href="mailto:seth@sethchurch.com?subject=Investor%20inquiry">Investor inquiry</a>
+          <a href="mailto:office@sethchurch.com?subject=Vendor%20or%20subcontractor%20inquiry">Vendor / subcontractor</a>
+          <a href="mailto:seth@sethchurch.com?subject=Media%20or%20public%20service%20inquiry">Media / public service</a>
+        </div>
+        <a href="mailto:seth@sethchurch.com" class="contact-link">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          seth.church5@gmail.com
+          seth@sethchurch.com
+        </a>
+        <a href="mailto:office@sethchurch.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          office@sethchurch.com
         </a>
         <a href="https://www.linkedin.com/in/sethdchurch" target="_blank" rel="noopener" class="contact-link">
           <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1084,10 +1307,10 @@
     <div class="footer-inner">
       <div class="footer-brand">Seth Church</div>
       <nav class="footer-links">
-        <a href="#impact">Impact</a><a href="#enterprise">Enterprise</a><a href="#gallery">Portfolio</a><a href="#record">Record</a><a href="#life">Life</a><a href="#contact">Contact</a>
+        <a href="#why">Why</a><a href="#about">My Story</a><a href="#audiences">Work With Me</a><a href="#gallery">Portfolio</a><a href="#record">Service</a><a href="#contact">Contact</a>
       </nav>
     </div>
-    <p class="footer-meta">&copy; <span id="year">2026</span> Seth Church &nbsp;·&nbsp; Fairbanks, Alaska &nbsp;·&nbsp; Building Alaska's future, one enterprise at a time.</p>
+    <p class="footer-meta">&copy; <span id="year">2026</span> Seth Church &nbsp;·&nbsp; Fairbanks, Alaska &nbsp;·&nbsp; Building, fixing, and investing in Alaska, one project at a time.</p>
   </div>
 </footer>
 
@@ -1212,7 +1435,7 @@
     const f = e.target;
     const subject = encodeURIComponent(f.subject.value || 'Website inquiry');
     const body = encodeURIComponent('Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\n\n' + f.message.value);
-    window.location.href = 'mailto:seth.church5@gmail.com?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:seth@sethchurch.com?subject=' + subject + '&body=' + body;
   });
 </script>
 </body>

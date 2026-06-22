@@ -617,6 +617,63 @@
   @media (max-width: 720px) {
     .aud-grid, .story-grid { grid-template-columns: 1fr; }
   }
+
+  /* ============ LANGUAGE SWITCHER ============ */
+  .nav-right { display: flex; align-items: center; gap: 1.1rem; }
+  @media (max-width: 1024px) { .nav-right { gap: 0.55rem; } }
+  .lang-switch { position: relative; }
+  .lang-btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--glass); border: 1px solid var(--glass-line); color: #fff;
+    border-radius: 100px; padding: 0.45rem 0.8rem; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600;
+    transition: all 0.25s var(--ease); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  }
+  .lang-btn:hover { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.35); }
+  .lang-btn .globe { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.6; flex-shrink: 0; }
+  .lang-btn .chev { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; transition: transform 0.25s var(--ease); }
+  .lang-switch.open .lang-btn .chev { transform: rotate(180deg); }
+  #langLabel { letter-spacing: 0.04em; }
+  .lang-panel {
+    position: absolute; top: calc(100% + 10px); right: 0; width: 300px; max-width: 80vw;
+    background: rgba(9,16,30,0.98); border: 1px solid var(--glass-line); border-radius: 14px;
+    box-shadow: 0 26px 64px rgba(0,0,0,0.55); padding: 0.7rem; z-index: 1200;
+    opacity: 0; visibility: hidden; transform: translateY(-8px) scale(0.98);
+    transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+    -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  }
+  .lang-switch.open .lang-panel { opacity: 1; visibility: visible; transform: none; }
+  .lang-search {
+    width: 100%; padding: 0.6rem 0.85rem; border-radius: 9px; border: 1px solid var(--glass-line);
+    background: rgba(255,255,255,0.06); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.86rem; margin-bottom: 0.5rem;
+  }
+  .lang-search::placeholder { color: rgba(255,255,255,0.45); }
+  .lang-search:focus { outline: none; border-color: var(--gold-light); background: rgba(255,255,255,0.1); }
+  .lang-list { list-style: none; max-height: 304px; overflow-y: auto; margin: 0; padding: 0; }
+  .lang-list::-webkit-scrollbar { width: 8px; }
+  .lang-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 8px; }
+  .lang-list::-webkit-scrollbar-track { background: transparent; }
+  .lang-item {
+    display: flex; align-items: baseline; gap: 0.6rem; justify-content: space-between;
+    padding: 0.5rem 0.7rem; border-radius: 8px; color: rgba(255,255,255,0.88);
+    cursor: pointer; font-size: 0.85rem; transition: background 0.15s, color 0.15s;
+  }
+  .lang-item:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  .lang-item .native { color: rgba(255,255,255,0.5); font-size: 0.77rem; text-align: right; }
+  .lang-item.active { background: rgba(200,153,58,0.18); color: var(--gold-light); }
+  .lang-item.active .native { color: rgba(232,191,106,0.8); }
+  .lang-item.hide { display: none; }
+  .lang-empty { padding: 0.8rem; color: rgba(255,255,255,0.5); font-size: 0.84rem; text-align: center; margin: 0; }
+  .lang-credit { margin: 0.5rem 0 0; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.67rem; color: rgba(255,255,255,0.4); text-align: center; }
+  @media (max-width: 1024px) { .lang-panel { right: -40px; } }
+  @media (max-width: 420px) { .lang-panel { position: fixed; right: 1rem; left: 1rem; width: auto; max-width: none; } }
+
+  /* hide Google Translate default chrome (engine runs headless behind our UI) */
+  .goog-te-banner-frame, .goog-te-balloon-frame, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+  .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+  .goog-text-highlight { background: none !important; box-shadow: none !important; }
+  #google_translate_element { position: absolute !important; left: -9999px !important; top: -9999px !important; height: 0; width: 0; overflow: hidden; }
+  body { top: 0 !important; }
 </style>
 </head>
 <body>
@@ -625,22 +682,38 @@
 
 <!-- ── NAVIGATION ── -->
 <nav id="nav">
-  <a class="nav-brand" href="#home"><span class="dot"></span>Seth Church</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#why">Why</a></li>
-    <li><a href="#about">My Story</a></li>
-    <li><a href="#impact">Impact</a></li>
-    <li><a href="#companies">Companies</a></li>
-    <li><a href="#audiences">Work With Me</a></li>
-    <li><a href="#gallery">Portfolio</a></li>
-    <li><a href="#record">Service</a></li>
-    <li><a href="#media">Media</a></li>
-    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <a class="nav-brand notranslate" translate="no" href="#home"><span class="dot"></span>Seth Church</a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#why">Why</a></li>
+      <li><a href="#about">My Story</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#companies">Companies</a></li>
+      <li><a href="#audiences">Work With Me</a></li>
+      <li><a href="#gallery">Portfolio</a></li>
+      <li><a href="#record">Service</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <div class="lang-switch notranslate" translate="no" id="langSwitch">
+      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose your language">
+        <svg class="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langLabel">EN</span>
+        <svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="lang-panel" id="langPanel" role="dialog" aria-label="Select language">
+        <input type="text" class="lang-search" id="langSearch" placeholder="Search language…" autocomplete="off" spellcheck="false">
+        <ul class="lang-list" id="langList"></ul>
+        <p class="lang-empty" id="langEmpty" hidden>No language found</p>
+        <p class="lang-credit">Machine translation by Google</p>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+<div id="google_translate_element" aria-hidden="true"></div>
 
 <!-- ── HERO ── -->
 <section class="hero" id="home">
@@ -1435,6 +1508,128 @@
     const body = encodeURIComponent('Name: ' + f.name.value + '\nEmail: ' + f.email.value + '\n\n' + f.message.value);
     window.location.href = 'mailto:seth.church5@gmail.com?subject=' + subject + '&body=' + body;
   });
+</script>
+
+<!-- ── LANGUAGE TRANSLATION (Google engine, headless) + custom searchable dropdown ── -->
+<script>
+  function googleTranslateElementInit(){
+    new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
+  }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+(function(){
+  var LANGS = [
+    {c:'en',n:'English',v:'English'},{c:'es',n:'Spanish',v:'Español'},{c:'fr',n:'French',v:'Français'},
+    {c:'de',n:'German',v:'Deutsch'},{c:'zh-CN',n:'Chinese (Simplified)',v:'简体中文'},{c:'zh-TW',n:'Chinese (Traditional)',v:'繁體中文'},
+    {c:'ar',n:'Arabic',v:'العربية'},{c:'hi',n:'Hindi',v:'हिन्दी'},{c:'pt',n:'Portuguese',v:'Português'},
+    {c:'ru',n:'Russian',v:'Русский'},{c:'ja',n:'Japanese',v:'日本語'},{c:'ko',n:'Korean',v:'한국어'},
+    {c:'it',n:'Italian',v:'Italiano'},{c:'nl',n:'Dutch',v:'Nederlands'},{c:'tr',n:'Turkish',v:'Türkçe'},
+    {c:'vi',n:'Vietnamese',v:'Tiếng Việt'},{c:'pl',n:'Polish',v:'Polski'},{c:'uk',n:'Ukrainian',v:'Українська'},
+    {c:'fa',n:'Persian',v:'فارسی'},{c:'th',n:'Thai',v:'ไทย'},{c:'id',n:'Indonesian',v:'Bahasa Indonesia'},
+    {c:'ms',n:'Malay',v:'Bahasa Melayu'},{c:'tl',n:'Filipino',v:'Filipino'},{c:'bn',n:'Bengali',v:'বাংলা'},
+    {c:'ur',n:'Urdu',v:'اردو'},{c:'pa',n:'Punjabi',v:'ਪੰਜਾਬੀ'},{c:'ta',n:'Tamil',v:'தமிழ்'},
+    {c:'te',n:'Telugu',v:'తెలుగు'},{c:'mr',n:'Marathi',v:'मराठी'},{c:'gu',n:'Gujarati',v:'ગુજરાતી'},
+    {c:'kn',n:'Kannada',v:'ಕನ್ನಡ'},{c:'ml',n:'Malayalam',v:'മലയാളം'},{c:'iw',n:'Hebrew',v:'עברית'},
+    {c:'el',n:'Greek',v:'Ελληνικά'},{c:'sv',n:'Swedish',v:'Svenska'},{c:'no',n:'Norwegian',v:'Norsk'},
+    {c:'da',n:'Danish',v:'Dansk'},{c:'fi',n:'Finnish',v:'Suomi'},{c:'cs',n:'Czech',v:'Čeština'},
+    {c:'sk',n:'Slovak',v:'Slovenčina'},{c:'hu',n:'Hungarian',v:'Magyar'},{c:'ro',n:'Romanian',v:'Română'},
+    {c:'bg',n:'Bulgarian',v:'Български'},{c:'sr',n:'Serbian',v:'Српски'},{c:'hr',n:'Croatian',v:'Hrvatski'},
+    {c:'sl',n:'Slovenian',v:'Slovenščina'},{c:'lt',n:'Lithuanian',v:'Lietuvių'},{c:'lv',n:'Latvian',v:'Latviešu'},
+    {c:'et',n:'Estonian',v:'Eesti'},{c:'sw',n:'Swahili',v:'Kiswahili'},{c:'af',n:'Afrikaans',v:'Afrikaans'},
+    {c:'sq',n:'Albanian',v:'Shqip'},{c:'am',n:'Amharic',v:'አማርኛ'},{c:'hy',n:'Armenian',v:'Հայերեն'},
+    {c:'az',n:'Azerbaijani',v:'Azərbaycan'},{c:'eu',n:'Basque',v:'Euskara'},{c:'be',n:'Belarusian',v:'Беларуская'},
+    {c:'bs',n:'Bosnian',v:'Bosanski'},{c:'ca',n:'Catalan',v:'Català'},{c:'ceb',n:'Cebuano',v:'Cebuano'},
+    {c:'co',n:'Corsican',v:'Corsu'},{c:'eo',n:'Esperanto',v:'Esperanto'},{c:'gl',n:'Galician',v:'Galego'},
+    {c:'ka',n:'Georgian',v:'ქართული'},{c:'ht',n:'Haitian Creole',v:'Kreyòl Ayisyen'},{c:'ha',n:'Hausa',v:'Hausa'},
+    {c:'haw',n:'Hawaiian',v:'ʻŌlelo Hawaiʻi'},{c:'hmn',n:'Hmong',v:'Hmoob'},{c:'is',n:'Icelandic',v:'Íslenska'},
+    {c:'ig',n:'Igbo',v:'Igbo'},{c:'ga',n:'Irish',v:'Gaeilge'},{c:'jw',n:'Javanese',v:'Basa Jawa'},
+    {c:'kk',n:'Kazakh',v:'Қазақ'},{c:'km',n:'Khmer',v:'ខ្មែរ'},{c:'ku',n:'Kurdish',v:'Kurdî'},
+    {c:'ky',n:'Kyrgyz',v:'Кыргызча'},{c:'lo',n:'Lao',v:'ລາວ'},{c:'la',n:'Latin',v:'Latina'},
+    {c:'lb',n:'Luxembourgish',v:'Lëtzebuergesch'},{c:'mk',n:'Macedonian',v:'Македонски'},{c:'mg',n:'Malagasy',v:'Malagasy'},
+    {c:'mt',n:'Maltese',v:'Malti'},{c:'mi',n:'Maori',v:'Māori'},{c:'mn',n:'Mongolian',v:'Монгол'},
+    {c:'my',n:'Myanmar (Burmese)',v:'မြန်မာ'},{c:'ne',n:'Nepali',v:'नेपाली'},{c:'ps',n:'Pashto',v:'پښتو'},
+    {c:'sm',n:'Samoan',v:'Gagana Samoa'},{c:'gd',n:'Scots Gaelic',v:'Gàidhlig'},{c:'st',n:'Sesotho',v:'Sesotho'},
+    {c:'sn',n:'Shona',v:'Shona'},{c:'sd',n:'Sindhi',v:'سنڌي'},{c:'si',n:'Sinhala',v:'සිංහල'},
+    {c:'so',n:'Somali',v:'Soomaali'},{c:'su',n:'Sundanese',v:'Basa Sunda'},{c:'tg',n:'Tajik',v:'Тоҷикӣ'},
+    {c:'uz',n:'Uzbek',v:'Oʻzbek'},{c:'cy',n:'Welsh',v:'Cymraeg'},{c:'xh',n:'Xhosa',v:'isiXhosa'},
+    {c:'yi',n:'Yiddish',v:'ייִדיש'},{c:'yo',n:'Yoruba',v:'Yorùbá'},{c:'zu',n:'Zulu',v:'isiZulu'}
+  ];
+
+  var sw = document.getElementById('langSwitch'),
+      btn = document.getElementById('langBtn'),
+      list = document.getElementById('langList'),
+      search = document.getElementById('langSearch'),
+      empty = document.getElementById('langEmpty'),
+      label = document.getElementById('langLabel');
+  if(!sw) return;
+
+  function cookieSet(v){
+    var exp = '; expires=' + new Date(Date.now() + 365*864e5).toUTCString(), h = location.hostname;
+    document.cookie = 'googtrans=' + v + exp + '; path=/';
+    document.cookie = 'googtrans=' + v + exp + '; path=/; domain=' + h;
+    document.cookie = 'googtrans=' + v + exp + '; path=/; domain=.' + h;
+  }
+  function cookieDel(){
+    var past = '; expires=Thu, 01 Jan 1970 00:00:00 GMT', h = location.hostname;
+    document.cookie = 'googtrans=' + past + '; path=/';
+    document.cookie = 'googtrans=' + past + '; path=/; domain=' + h;
+    document.cookie = 'googtrans=' + past + '; path=/; domain=.' + h;
+  }
+  function cookieGet(){ var m = document.cookie.match(/(?:^|; )googtrans=([^;]*)/); return m ? decodeURIComponent(m[1]) : ''; }
+
+  function applyCombo(code){
+    var c = document.querySelector('.goog-te-combo');
+    if(c){ c.value = code; c.dispatchEvent(new Event('change')); return true; }
+    return false;
+  }
+  function markActive(code){ for(var i=0;i<list.children.length;i++){ list.children[i].classList.toggle('active', list.children[i].getAttribute('data-code')===code); } }
+  function setLabel(code){ label.textContent = (code || 'en').split('-')[0].toUpperCase(); }
+
+  function choose(code){
+    closePanel();
+    setLabel(code); markActive(code);
+    // Set the googtrans cookie and reload: the widget reads it on load and translates.
+    // This is the mechanism Google's website translator supports reliably everywhere.
+    if(code === 'en'){ cookieDel(); } else { cookieSet('/en/' + code); }
+    location.reload();
+  }
+
+  var frag = document.createDocumentFragment();
+  LANGS.forEach(function(L){
+    var li = document.createElement('li');
+    li.className = 'lang-item';
+    li.setAttribute('data-code', L.c);
+    li.setAttribute('data-s', (L.n + ' ' + L.v + ' ' + L.c).toLowerCase());
+    li.innerHTML = '<span class="lname"></span><span class="native"></span>';
+    li.children[0].textContent = L.n;
+    li.children[1].textContent = L.v;
+    li.addEventListener('click', function(){ choose(L.c); });
+    frag.appendChild(li);
+  });
+  list.appendChild(frag);
+
+  search.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase(), any = false, it = list.children;
+    for(var i=0;i<it.length;i++){
+      var show = !q || it[i].getAttribute('data-s').indexOf(q) > -1;
+      it[i].classList.toggle('hide', !show); if(show) any = true;
+    }
+    empty.hidden = any;
+  });
+  search.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ var f = list.querySelector('.lang-item:not(.hide)'); if(f) f.click(); }
+  });
+
+  function openPanel(){ sw.classList.add('open'); btn.setAttribute('aria-expanded','true'); search.value=''; search.dispatchEvent(new Event('input')); list.scrollTop=0; setTimeout(function(){ search.focus(); }, 60); }
+  function closePanel(){ sw.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); sw.classList.contains('open') ? closePanel() : openPanel(); });
+  document.addEventListener('click', function(e){ if(!sw.contains(e.target)) closePanel(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePanel(); });
+
+  var cur = cookieGet();
+  if(cur){ var p = cur.split('/'); var code = p[2]; if(code && code !== 'en'){ setLabel(code); markActive(code); } }
+})();
 </script>
 </body>
 </html>

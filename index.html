@@ -499,7 +499,7 @@
 
   /* ============ RESPONSIVE ============ */
   /* collapse nav to a drawer early so links never overflow */
-  @media (max-width: 1080px) {
+  @media (max-width: 1180px) {
     .nav-links {
       position: fixed; inset: 66px 0 auto 0; flex-direction: column; gap: 0;
       background: rgba(6,13,26,0.98); backdrop-filter: blur(16px);
@@ -628,9 +628,10 @@
 
   /* ============ LANGUAGE SWITCHER ============ */
   .nav-right { display: flex; align-items: center; gap: 1.1rem; }
-  @media (max-width: 1080px) { .nav-right { gap: 0.55rem; } }
+  @media (max-width: 1180px) { .nav-right { gap: 0.55rem; } }
   /* Pinned floating language button: top-right, always visible, can't be crowded by the nav */
-  .lang-switch { position: fixed; top: 82px; right: 18px; z-index: 1100; }
+  .lang-switch { position: fixed; top: 13px; right: 24px; z-index: 1100; }
+  @media (min-width: 1181px) { nav { padding-right: 190px; } }
   .lang-btn {
     display: inline-flex; align-items: center; gap: 0.45rem;
     background: var(--gold-light); border: 1px solid var(--gold); color: var(--abyss);
@@ -676,7 +677,7 @@
   .lang-empty { padding: 0.8rem; color: rgba(255,255,255,0.5); font-size: 0.84rem; text-align: center; margin: 0; }
   .lang-credit { margin: 0.5rem 0 0; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.67rem; color: rgba(255,255,255,0.4); text-align: center; }
   .lang-panel { right: 0; }
-  @media (max-width: 480px) { .lang-switch { top: 74px; right: 10px; } }
+  @media (max-width: 1180px) { .lang-switch { top: 74px; right: 12px; } }
   @media (max-width: 420px) { .lang-panel { position: fixed; right: 1rem; left: 1rem; width: auto; max-width: none; } }
 
   /* hide Google Translate default chrome (engine runs headless behind our UI) */

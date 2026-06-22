@@ -629,18 +629,19 @@
   /* ============ LANGUAGE SWITCHER ============ */
   .nav-right { display: flex; align-items: center; gap: 1.1rem; }
   @media (max-width: 1080px) { .nav-right { gap: 0.55rem; } }
-  .lang-switch { position: relative; }
+  /* Pinned floating language button: top-right, always visible, can't be crowded by the nav */
+  .lang-switch { position: fixed; top: 82px; right: 18px; z-index: 1100; }
   .lang-btn {
     display: inline-flex; align-items: center; gap: 0.45rem;
-    background: rgba(200,153,58,0.16); border: 1.5px solid var(--gold-light); color: #fff;
-    border-radius: 100px; padding: 0.5rem 0.95rem; cursor: pointer;
-    font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 600;
-    transition: all 0.25s var(--ease); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    background: var(--gold-light); border: 1px solid var(--gold); color: var(--abyss);
+    border-radius: 100px; padding: 0.62rem 1.1rem; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    transition: all 0.25s var(--ease);
   }
-  .lang-btn:hover { background: var(--gold-light); color: var(--abyss); border-color: var(--gold-light); }
-  .lang-btn:hover .globe, .lang-btn:hover .chev { stroke: var(--abyss); }
-  .lang-btn .globe { width: 17px; height: 17px; stroke: var(--gold-light); fill: none; stroke-width: 1.8; flex-shrink: 0; }
-  .lang-btn .chev { width: 11px; height: 11px; stroke: var(--gold-light); fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.25s var(--ease), stroke 0.25s; }
+  .lang-btn:hover { background: #fff; border-color: #fff; transform: translateY(-1px); box-shadow: 0 14px 34px rgba(0,0,0,0.42); }
+  .lang-btn .globe { width: 18px; height: 18px; stroke: var(--abyss); fill: none; stroke-width: 1.9; flex-shrink: 0; }
+  .lang-btn .chev { width: 12px; height: 12px; stroke: var(--abyss); fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.25s var(--ease); }
   .lang-switch.open .lang-btn .chev { transform: rotate(180deg); }
   #langLabel { letter-spacing: 0.04em; }
   .lang-panel {
@@ -674,7 +675,8 @@
   .lang-item.hide { display: none; }
   .lang-empty { padding: 0.8rem; color: rgba(255,255,255,0.5); font-size: 0.84rem; text-align: center; margin: 0; }
   .lang-credit { margin: 0.5rem 0 0; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.67rem; color: rgba(255,255,255,0.4); text-align: center; }
-  @media (max-width: 1080px) { .lang-panel { right: -40px; } }
+  .lang-panel { right: 0; }
+  @media (max-width: 480px) { .lang-switch { top: 74px; right: 10px; } }
   @media (max-width: 420px) { .lang-panel { position: fixed; right: 1rem; left: 1rem; width: auto; max-width: none; } }
 
   /* hide Google Translate default chrome (engine runs headless behind our UI) */

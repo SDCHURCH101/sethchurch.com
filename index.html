@@ -708,24 +708,26 @@
       <li><a href="#media">Media</a></li>
       <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
-    <div class="lang-switch notranslate" translate="no" id="langSwitch">
-      <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose your language">
-        <svg class="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span id="langLabel">English</span>
-        <svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="lang-panel" id="langPanel" role="dialog" aria-label="Select language">
-        <input type="text" class="lang-search" id="langSearch" placeholder="Search language…" autocomplete="off" spellcheck="false">
-        <ul class="lang-list" id="langList"></ul>
-        <p class="lang-empty" id="langEmpty" hidden>No language found</p>
-        <p class="lang-credit">Machine translation by Google</p>
-      </div>
-    </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
+<!-- Language switcher: a DIRECT child of <body> (kept out of the backdrop-filtered nav, which was blurring it) -->
+<div class="lang-switch notranslate" translate="no" id="langSwitch">
+  <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Choose your language">
+    <svg class="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    <span id="langLabel">English</span>
+    <svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="lang-panel" id="langPanel" role="dialog" aria-label="Select language">
+    <input type="text" class="lang-search" id="langSearch" placeholder="Search language…" autocomplete="off" spellcheck="false">
+    <ul class="lang-list" id="langList"></ul>
+    <p class="lang-empty" id="langEmpty" hidden>No language found</p>
+    <p class="lang-credit">Machine translation by Google</p>
+  </div>
+</div>
 <div id="google_translate_element" aria-hidden="true"></div>
 
 <!-- ── HERO ── -->

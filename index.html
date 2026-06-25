@@ -124,7 +124,7 @@
   section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 
   /* ============ NAV ============ */
-  nav {
+  #nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     height: 66px;
     display: flex; align-items: center; justify-content: space-between;
@@ -133,7 +133,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.07);
     transition: background 0.4s var(--ease), border-color 0.4s;
   }
-  nav.scrolled { background: rgba(6,13,26,0.9); }
+  #nav.scrolled { background: rgba(6,13,26,0.9); }
   .nav-brand {
     font-family: 'Playfair Display', serif;
     font-size: 1.18rem; font-weight: 700;
@@ -633,7 +633,7 @@
   @media (max-width: 1180px) { .nav-right { gap: 0.55rem; } }
   /* Pinned floating language button: top-right, always visible, can't be crowded by the nav */
   .lang-switch { position: fixed; top: 13px; right: 24px; z-index: 1100; }
-  @media (min-width: 1181px) { nav { padding-right: 190px; } }
+  @media (min-width: 1181px) { #nav { padding-right: 190px; } }
   .lang-btn {
     display: inline-flex; align-items: center; gap: 0.45rem;
     background: var(--gold-light); border: 1px solid var(--gold); color: var(--abyss);

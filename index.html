@@ -125,9 +125,7 @@
     height: 66px;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 2rem;
-    background: rgba(6,13,26,0.55);
-    backdrop-filter: blur(14px) saturate(140%);
-    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    background: rgba(6,13,26,0.7);
     border-bottom: 1px solid rgba(255,255,255,0.07);
     transition: background 0.4s var(--ease), border-color 0.4s;
   }
@@ -400,7 +398,7 @@
   .media-feature h3 { font-family: 'Playfair Display', serif; font-style: italic; color: #fff; font-size: clamp(1.3rem, 2.6vw, 1.9rem); line-height: 1.4; margin: 0.7rem 0 0.9rem; max-width: 880px; }
   .media-feature p { color: rgba(255,255,255,0.74); font-size: 0.96rem; line-height: 1.6; max-width: 740px; }
   .media-feature .media-link { display: inline-block; margin-top: 1.2rem; color: var(--gold-light); font-weight: 600; font-size: 0.9rem; }
-  .media-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 1.2rem; }
+  .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.2rem; }
   .media-card { background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 1.6rem; text-decoration: none; display: flex; flex-direction: column; transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.3s; }
   .media-card:hover { transform: translateY(-4px); box-shadow: 0 20px 46px rgba(11,31,58,0.1); border-color: var(--gold); }
   .media-tag { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--teal-deep); }
@@ -1207,6 +1205,12 @@
       <span class="media-link">Read the op-ed ↗</span>
     </a>
     <div class="media-grid">
+      <a class="media-card reveal" href="https://www.adn.com/politics/alaska-legislature/2026/06/24/ua-regent-seth-church-drops-out-of-fairbanks-legislative-race-ahead-of-saturday-withdrawal-deadline/" target="_blank" rel="noopener">
+        <span class="media-tag">News &middot; Anchorage Daily News</span>
+        <h4>Seth Church withdraws from the Fairbanks legislative race</h4>
+        <p>Anchorage Daily News reports on Seth Church's decision to step back from the Fairbanks legislative race ahead of the candidate withdrawal deadline.</p>
+        <span class="media-meta">June 2026 &middot; Read ↗</span>
+      </a>
       <a class="media-card reveal" href="https://jewelisaac.com/media/interview-on-kfar-part-one" target="_blank" rel="noopener">
         <span class="media-tag">Radio &middot; KFAR</span>
         <h4>Building Alaska, Part 1</h4>

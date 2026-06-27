@@ -306,6 +306,14 @@
 
   /* ============ ENTERPRISE ============ */
   #enterprise { background: var(--cream-2); }
+  /* Maiia / partner section */
+  #partner { background: var(--cream-2); }
+  .partner-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 4rem; align-items: center; }
+  .partner-photo { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 28px 64px rgba(11,31,58,0.16); }
+  .partner-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 8%; display: block; }
+  .partner-role { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: -0.5rem 0 1.5rem; }
+  .partner-body p { color: var(--slate); font-size: 1.04rem; margin-bottom: 1.1rem; }
+  @media (max-width: 1000px) { .partner-grid { grid-template-columns: 1fr; gap: 2.2rem; } .partner-photo { max-width: 380px; } }
   .ent-head { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: end; margin-bottom: 3.2rem; }
   .sectors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
   .sector {
@@ -724,7 +732,7 @@
       "jobTitle": ["Entrepreneur", "Commercial Contractor", "Real Estate Investor"],
       "gender": "Male",
       "nationality": "American",
-      "spouse": { "@type": "Person", "name": "Maiia Church" },
+      "spouse": { "@type": "Person", "name": "Maiia Church", "jobTitle": "Chief Financial Officer", "description": "Maiia Church is the Chief Financial Officer across Seth and Maiia Church's companies. A finance executive with deep experience in corporate banking and credit analysis, including more than a decade in leadership at Sberbank." },
       "homeLocation": {
         "@type": "Place",
         "name": "Fairbanks, Alaska",
@@ -966,6 +974,23 @@
         </div>
       </div>
     </aside>
+  </div>
+</section>
+
+<!-- ── MAIIA / PARTNER ── -->
+<section id="partner">
+  <div class="wrap partner-grid">
+    <div class="partner-photo reveal">
+      <img src="images/maiia-portrait.jpg" alt="Maiia Church, Chief Financial Officer" loading="lazy">
+    </div>
+    <div class="partner-body">
+      <p class="eyebrow reveal">My Partner in Life and Business</p>
+      <h2 class="section-title reveal d1">Maiia Church.</h2>
+      <p class="partner-role reveal d1">Chief Financial Officer</p>
+      <p class="reveal d2">Maiia is my wife and my business partner. She is the Chief Financial Officer over all of our companies, and she brings her management expertise to bear on optimizing how every one of them performs.</p>
+      <p class="reveal d2">She is a finance executive with deep experience in corporate banking, credit analysis, and operational management. Before Alaska, she spent more than a decade in leadership at Sberbank, including senior roles in corporate sales and credit decision-making.</p>
+      <p class="reveal d3">Across our companies she leads financial strategy, underwriting, reporting, and the performance discipline that keeps an operation healthy: capital planning, cash flow, and financial controls aligned with each asset's goals. She brings an international perspective and a steady hand to everything we build together.</p>
+    </div>
   </div>
 </section>
 
